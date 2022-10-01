@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class exp : MonoBehaviour
+public class TouchTrigger : MonoBehaviour
 {
+public GameObject Sphere;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +15,11 @@ public class exp : MonoBehaviour
     void Update()
     {
         
+    }
+    void OnTriggerEnter (Collider col){
+        if(col.tag == "Player"){
+            Sphere.SetActive(true);
+            Destroy(gameObject);
+        }
     }
 }
