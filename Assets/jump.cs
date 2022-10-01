@@ -5,12 +5,12 @@ using UnityEngine;
 public class jump : MonoBehaviour
 {
     bool is_ground = false;
-    Rigidbody Capsule;
+    Rigidbody gg;
     public float force = 6;
     // Start is called before the first frame update
     void Start()
     {
-        Capsule = GetComponent<Rigidbody>();
+        gg = GetComponent<Rigidbody>();
     }
 
     private void OnTriggerStay(Collider col)
@@ -27,6 +27,6 @@ public class jump : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && is_ground)
-            Capsule.AddForce(Vector2.up * force, ForceMode.Impulse);
+            gg.AddForce(Vector2.up * force, ForceMode.Impulse);
     }
 }
