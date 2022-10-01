@@ -13,11 +13,11 @@ public class Movement : MonoBehaviour
     {
         
     }
-
     // Update is called once per frame
     void Update()
     {
         horizontal = Input.GetAxis("Horizontal") * movementSpeed * Time.deltaTime;
         transform.Translate(0, 0, horizontal);
+        
     }
 }
